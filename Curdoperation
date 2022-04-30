@@ -1,0 +1,45 @@
+console.log("curd.js");
+
+const express = require('express');
+const router = express.Router();
+const schema = require('../models/databaseschema');
+
+router.post('/insert', async (req,res)=>{
+    
+    try{
+        const a = new schema({
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
+            tech: req.body.tech,
+            phoneno: req.body.phoneno,
+            country: req.body.country
+        });
+        const addData = await a.save();
+        res.json(addData);
+    }catch(err){
+        console.log(`Error:${err}`);
+    }
+})
+
+router.post('/', async (req,res)=>{
+    try{
+        const data = await schema.find();
+        res.json(data);
+    }catch(error){    
+        console.log(`Error : ${error}`);
+    }
+})
+
+router.patch('/:id',async(req,res)=> {
+    try{
+        const alien = await schema.findById(req.params.id) 
+        alien.country = req.body.country
+        const a1 = await alien.save()
+        res.json(a1)   
+    }catch(err){
+        res.send('Error')
+    }
+
+})
+
+module.exports = router;
