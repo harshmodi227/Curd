@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-const crudRoutes = require('./routes/Crudperations');
+const crudRoutes = require('./routes/Crudoperations');
 
 const mongoose = require("mongoose");
 const url = "mongodb://localhost/HarshModi";
@@ -18,4 +18,5 @@ app.use('/harsh',crudRoutes);
 
 app.listen(6000, ()=>{
     console.log('server is on port 6000');
-});
+})
+
