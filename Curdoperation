@@ -30,16 +30,34 @@ router.post('/', async (req,res)=>{
     }
 })
 
-router.patch('/:id',async(req,res)=> {
+router.put('/update/:id',async(req,res)=> {
     try{
-        const alien = await schema.findById(req.params.id) 
-        alien.country = req.body.country
-        const a1 = await alien.save()
+        upname = req.body.firstname;
+        upcountry = req.body.country;
+        const upd = await schema.findByIdAndUpdate( req.params.id,{$set : {
+            firstname: upname,
+            country : upcountry
+        }}, {new:true});
+        
+        const a1 = await upd.save();
         res.json(a1)   
     }catch(err){
         res.send('Error')
     }
 
+})
+
+router.delete('/delete/:id', async (req,res) => {
+    try{
+        const del = await schema.findByIdAndDelete(req.params.id);
+        console.log("document deleted");
+        // const a2 = await del.save();
+        res.send("document Deleted" + del);
+        // res.json(del);
+        // res.json(del);
+    }catch(err){
+        console.log('Error' + err);
+    }
 })
 
 module.exports = router;
