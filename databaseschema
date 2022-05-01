@@ -24,7 +24,12 @@ const DatabaseSchema = new mongoose.Schema({
     country: {
         type: String,
         default: "india"
+    },
+    startdate: {
+        type:Date,
+        default: Date.now
     }
+
 })
 
 module.exports = mongoose.model('schema', DatabaseSchema) ;
