@@ -12,7 +12,8 @@ router.post('/insert', async (req,res)=>{
             lastname: req.body.lastname,
             tech: req.body.tech,
             phoneno: req.body.phoneno,
-            country: req.body.country
+            country: req.body.country,
+            startdate: req.body.startdate
         });
         const addData = await a.save();
         res.json(addData);
