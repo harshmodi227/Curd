@@ -1,0 +1,25 @@
+https://github.com/tauseef89/node-express-crud-api-2021
+
+// for find
+http://localhost:6000/harsh
+
+// insert method
+post http://localhost:6000/harsh/insert
+{
+    "firstname": "Harsh",
+    "lastname": "Modi",
+    "tech": "NodeJs",
+    "phoneno": "1548796235",
+    "country":"India"
+}
+
+// update method
+put http://localhost:6000/harsh/update/626e1869c15826b515c9b772
+
+{
+    "firstname":"kishan",
+    "country":"canandajavano"
+}
+
+// delete Method
+http://localhost:6000/harsh/delete/626e1b02697c8bc8b4bc3abc
