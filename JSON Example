@@ -23,3 +23,10 @@ put http://localhost:6000/harsh/update/626e1869c15826b515c9b772
 
 // delete Method
 http://localhost:6000/harsh/delete/626e1b02697c8bc8b4bc3abc
+
+
+populate method to join two collection 
+
+https://github.com/academind/node-restful-api-tutorial/tree/08-populate-orders-with-products/api/routes
+
+https://www.geeksforgeeks.org/mongoose-populate-method/
